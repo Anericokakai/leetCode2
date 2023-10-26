@@ -50,11 +50,23 @@ public class RemoveDuplicatesInArray {
 
         int max= nums.length;
         for(int k=0;k<max;k++){
-            if(!map.containsValue(nums[k])){
-                map.put(k,nums[k]);
 
+            if(map.containsValue(nums[k])){
+               for(int j=k;j<max-1;j++){
+                   nums[j]=nums[j+1];
+
+               }
+               k--;
+               max--;
+
+            }else{
+
+                map.put(k,nums[k]);
             }
+
         }
+
+
 
         return  map.size()  ;
 
@@ -62,13 +74,13 @@ public class RemoveDuplicatesInArray {
     }
     public static void main(String[] args) {
 
-        int [] nums={0,0,1,1,1,2,2,3,3,4,5,3,57,7,43,2,4,4,5,6,7,7,2,3,4,53,3,3,3,4,4,5,5,6,6,7,6,6,6,6,6,6,6,6,6,6,6,6,};
-        double time =System.currentTimeMillis();
- int newArraySize=removeDups(nums);
-        System.out.println("the time take to un this coe is :"+(System.currentTimeMillis()));
- System.out.println ("array size is "+newArraySize);
+        int [] nums={0,0,1,1,1,2,2,3,3,4};
+//        double time =System.currentTimeMillis();
+// int newArraySize=removeDups(nums);
+//        System.out.println("the time take to un this coe is :"+(System.currentTimeMillis()));
+// System.out.println ("array size is "+newArraySize);
 
-//        removeDuplicateSecond(nums);
+      removeDuplicateSecond(nums);
 
 
     }
