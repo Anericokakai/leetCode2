@@ -72,6 +72,34 @@ public class RemoveDuplicatesInArray {
 
 
     }
+
+//   !  method  three
+//    ? we are using alot of time and space hee
+
+//    TODO  loop the array
+    public  static  int removeDuplicates(int[] nums)
+    {
+//  ? initialise the return int;
+
+int i=0;
+for (int j=0;j<nums.length;j++){
+//    ? note this is a post initalisation we first assign the value
+//    ? to i before we increment
+    nums[i++]=nums[j];
+
+//   ? while loop to skip duplicates
+
+    while (j<nums.length-1&&nums[j]==nums[j+1]){
+      j++;
+
+    }
+
+}
+return i;
+
+    }
+
+
     public static void main(String[] args) {
 
         int [] nums={0,0,1,1,1,2,2,3,3,4};
@@ -80,7 +108,9 @@ public class RemoveDuplicatesInArray {
 //        System.out.println("the time take to un this coe is :"+(System.currentTimeMillis()));
 // System.out.println ("array size is "+newArraySize);
 
-      removeDuplicateSecond(nums);
+//      removeDuplicateSecond(nums);
+
+        removeDuplicates(nums);
 
 
     }
